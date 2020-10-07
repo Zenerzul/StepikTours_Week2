@@ -140,7 +140,6 @@ dmypy.json
 cython_debug/
 
 # custom ignores
-**/DS_Store
-.idea
-.DS_Store
+**/.DS_Store
+/.idea
 
