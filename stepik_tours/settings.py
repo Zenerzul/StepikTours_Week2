@@ -29,7 +29,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'stepic_tours.urls'
+ROOT_URLCONF = 'stepikste_tours.urls'
 
 STATIC_ROOT = 'static'
 
@@ -49,7 +49,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'stepic_tours.wsgi.application'
+WSGI_APPLICATION = 'stepik_tours.wsgi.application'
 
 DATABASES = {
     'default': {
