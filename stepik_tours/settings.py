@@ -29,7 +29,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'stepikste_tours.urls'
+ROOT_URLCONF = 'stepik_tours.urls'
 
 STATIC_ROOT = 'static'
 
