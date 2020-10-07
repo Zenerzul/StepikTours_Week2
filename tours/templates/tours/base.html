@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style type="text/css">
+      body {
+        background-color: #fff;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5 pt-4">
+      <!--  NAV MENU  -->
+
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <div class="container" style="text-allign: center">
+          <a class="navbar-brand" data-test="logo" href="/">{{ title }} </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" data-test="navigation">
+              {% for dep, departure in departures.items %}
+              <li style="display: inline-block" class="mx-2">
+                <a href="/departure/{{ dep }}"
+                   {% if request.path == dep %} class="active"{% endif %}
+                   style="text-decoration: none; color: white; font-style: italic"
+                   data-test="navlink">{{ departure }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- TEMPLATES -->
+
+      {% block container %} {% endblock %}
+
+      <footer>
+        <p></p>
+      </footer>
+    </div>
+  </body>
+</html>

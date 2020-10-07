@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+per_file_ignores =
+    data.py: E501

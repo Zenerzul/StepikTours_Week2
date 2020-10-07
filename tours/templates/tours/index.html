@@ -1,0 +1,40 @@
+{% extends 'tours/base.html' %} {% block container %}
+<!-- HERO -->
+
+<div class="jumbotron text-center mt-4 mb-5" style="color: white; background-image: url(https://wallpaperaccess.com/full/2028728.jpg); background-size: cover; opacity: 0.8">
+  <h1 class="display-4">{{ title }}</h1>
+  <p class="lead">{{ subtitle }}</p>
+  <p class="mt-5 w-50 mx-auto pb-5">{{ description }}</p>
+</div>
+
+<!-- CARDS -->
+
+<div class="row mt-5 pt-4" data-test="cards">
+  <div class="card-group">
+    {% for tour, details in tours_random_six.items %}
+    <div class="col-lg-4 col-md-6 col-xs-12" data-test="card">
+      <div class="card mb-3">
+        <img
+          src="{{ details.picture }}"
+          class="card-img-top img-fluid"
+          data-test="picture"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ details.title }}</h5>
+          <p class="card-text">{{ details.description }}</p>
+        </div>
+        <div class="card-footer">
+          <a
+            href="tour/{{ tour }}"
+            class="btn btn-sm btn-primary"
+            data-test="tourlink"
+            >Подробнее</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

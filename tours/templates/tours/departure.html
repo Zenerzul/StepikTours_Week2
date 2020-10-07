@@ -1,0 +1,41 @@
+{% extends 'tours/base.html' %} {% block container %}
+<h1 class="display-5 my-4" style="font-size: 62px; font-weight: 300">
+  Летим из <span data-test="from">{{ departure_title}}</span>
+</h1>
+<p class="mb-4">
+  Найдено <span data-test="tourcount">{{ dep_amount }}</span>
+  тур{% if dep_amount  == 1 %}{% elif dep_amount <= 4 %}a{% else %}ов{% endif %}, от
+  <span data-test="pricemin">{{ dep_price_min }}</span> до
+  <span data-test="pricemax">{{ dep_price_max }}</span> и от
+  <span data-test="nightsmax">{{ dep_nights_min }}</span> ночей до
+  <span data-test="nightsmax">{{ dep_nights_max }}</span> ночей
+</p>
+<!-- HERO -->
+
+<!-- CARDS -->
+
+<div class="row mt-5" data-test="cards">
+  {% for tour, details in tours.items %} {% if details.departure == departure %}
+  <div class="col-lg-4 col-md-6 col-xs-12" data-test="card">
+    <div class="card mb-3">
+      <img
+        src=" {{ details.picture }}"
+        class="card-img-top img-fluid"
+        data-test="picture"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ details.title }}</h5>
+        <p class="card-text">{{ details.description }}</p>
+        <a
+          href="/tour/{{ tour }}"
+          class="btn btn-sm btn-primary"
+          data-test="tourlink"
+          >Подробнее</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endif %} {% endfor %}
+</div>
+
+{% endblock %}
