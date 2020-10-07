@@ -12,4 +12,4 @@ and much more!
 
 Enjoy!
 
-#### P.S. All requirements are listed in reqyirements.txt file
+#### P.S. All requirements are listed in requirements.txt file
