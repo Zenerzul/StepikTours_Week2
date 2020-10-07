@@ -1,17 +1,8 @@
 Django==3.1.1
 flake8==3.8.4
-Flask==1.0.2
-Flask-Cors==3.0.4
-ipython==6.4.0
-ipython-genutils==0.2.0
-json5==0.9.3
-jsonschema==2.6.0
-matplotlib==2.2.2
 path.py==11.0.1
 pathlib2==2.3.2
 pep8==1.7.1
 pip-review==1.1.0
 pip-tools==5.3.1
 SQLAlchemy==1.2.7
-sqlparse==0.3.1
-tables==3.4.3
