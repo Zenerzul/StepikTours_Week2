@@ -1,5 +1,6 @@
 from random import sample
 
+from django.http import Http404
 from django.shortcuts import render
 from django.views import View
 
@@ -48,32 +49,38 @@ class DepartureView(View):
                 elif info["nights"] > dep_nights_max:
                     dep_nights_max = info["nights"]
 
-        return render(request, 'tours/departure.html', context={
-            "title": title,
-            "departures": departures,
-            "dep_amount": dep_amount,
-            "dep_price_min": dep_price_min,
-            "dep_price_max": dep_price_max,
-            "dep_nights_min": dep_nights_min,
-            "dep_nights_max": dep_nights_max,
-            "tours": tours,
-            "departure": departure,
-            "departure_title": departures[departure][3:]
-        })
+        if departure not in departures.keys():
+            raise Http404
+        else:
+            return render(request, 'tours/departure.html', context={
+                "title": title,
+                "departures": departures,
+                "dep_amount": dep_amount,
+                "dep_price_min": dep_price_min,
+                "dep_price_max": dep_price_max,
+                "dep_nights_min": dep_nights_min,
+                "dep_nights_max": dep_nights_max,
+                "tours": tours,
+                "departure": departure,
+                "departure_title": departures[departure][3:]
+            })
 
 
 class TourView(View):
     def get(self, request, id, *args, **kwargs):
-        return render(request, 'tours/tour.html', context={
-            "title": title,
-            "departures": departures,
-            "tour_title": tours[id]['title'],
-            "nights": tours[id]['nights'],
-            "price": tours[id]['price'],
-            "description": tours[id]['description'],
-            "stars": tours[id]['stars'],
-            "date": tours[id]['date'],
-            "country": tours[id]['country'],
-            "picture": tours[id]['picture'],
-            "departure_title": departures[tours[id]['departure']][3:]
-        })
+        if id not in tours.keys():
+            raise Http404
+        else:
+            return render(request, 'tours/tour.html', context={
+                "title": title,
+                "departures": departures,
+                "tour_title": tours[id]['title'],
+                "nights": tours[id]['nights'],
+                "price": tours[id]['price'],
+                "description": tours[id]['description'],
+                "stars": tours[id]['stars'],
+                "date": tours[id]['date'],
+                "country": tours[id]['country'],
+                "picture": tours[id]['picture'],
+                "departure_title": departures[tours[id]['departure']][3:]
+            })
