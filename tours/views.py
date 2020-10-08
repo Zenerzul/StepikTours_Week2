@@ -8,7 +8,7 @@ from tours.data import title, subtitle, description, departures, tours
 
 class MainView(View):
     def get(self, request, *args, **kwargs):
-        tours_random_six = {sample(tours.values(), 6)}
+        tours_random_six = sample(list(tours.values()), 6)
         return render(request, 'tours/index.html', context={
             'departures': departures,
             'title': title,
