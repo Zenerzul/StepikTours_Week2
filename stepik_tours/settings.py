@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
+
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +33,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'stepik_tours.urls'
 
-STATIC_ROOT = 'static'
 
 TEMPLATES = [
     {
@@ -84,3 +85,4 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

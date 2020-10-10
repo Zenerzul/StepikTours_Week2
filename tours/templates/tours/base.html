@@ -8,6 +8,8 @@
     </style>
     <meta charset="UTF-8" />
     <title>{{ title }}</title>
+    <link rel="stylesheet" {% load static %} href="{% static 'css/base.css' %}"
+    >
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,7 +20,6 @@
   <body>
     <div class="container mt-5 pt-4">
       <!--  NAV MENU  -->
-
 
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="width: 100%">
         <div class="container" style="text-allign: center">
@@ -62,16 +63,16 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script
-      src="jquery-3.3.1.slim.min.js"
+      src="/static/js/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
     <script>
       window.jQuery ||
-        document.write('<script src="jquery-3.3.1.slim.min.js"><\/script>');
+        document.write('<script src="/static/js/jquery-3.3.1.slim.min.js"><\/script>');
     </script>
-    <script src="popper.min.js"></script>
-    <script src="bootstrap.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     </div>
   </body>
 </html>
