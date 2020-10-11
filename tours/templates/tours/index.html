@@ -12,7 +12,6 @@
 <!-- CARDS -->
 
 <div class="row mt-5 pt-4" data-test="cards">
-  <div class="card-deck">
     {% for tour, details in tours_random_six.items %}
     <div class="col-lg-4 col-md-6 col-s-12" data-test="card">
       <div class="card mb-3">
@@ -36,7 +35,6 @@
       </div>
     </div>
     {% endfor %}
-  </div>
 </div>
 
 {% endblock %}

@@ -3,12 +3,12 @@
   Летим из <span data-test="from">{{ departure_title}}</span>
 </h1>
 <p class="mb-4">
-  Найдено <span data-test="tourcount">{{ dep_amount }}</span>
-  тур{% if dep_amount  == 1 %}{% elif dep_amount <= 4 %}a{% else %}ов{% endif %}, от
-  <span data-test="pricemin">{{ dep_price_min }}</span> до
-  <span data-test="pricemax">{{ dep_price_max }}</span> и от
-  <span data-test="nightsmax">{{ dep_nights_min }}</span> ночей до
-  <span data-test="nightsmax">{{ dep_nights_max }}</span> ночей
+  Найдено <span data-test="tourcount">{{ departure_amount }}</span>
+  тур{% if departure_amount  == 1 %}{% elif departure_amount <= 4 %}a{% else %}ов{% endif %}, от
+  <span data-test="pricemin">{{ departure_price_min }}</span> до
+  <span data-test="pricemax">{{ departure_price_max }}</span> и от
+  <span data-test="nightsmax">{{ departure_nights_min }}</span> ночей до
+  <span data-test="nightsmax">{{ departure_nights_max }}</span> ночей
 </p>
 <!-- HERO -->
 
