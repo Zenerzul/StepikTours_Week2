@@ -3,12 +3,11 @@ Welcome!
 
 This is my second project for [Django course on Stepic](<https://stepik.org/course/63298>). 
 
-## What's new here?
-* Huge choice of tours
-* Added site navigation
-* Variation of nights and prices on Tour pages
-
-and much more!
+## What's here?
+* Site navigation between main page and tours by direction
+* 6 random tours are listed on the main page
+* Tours are sorted by city of departure
+* Single tour page contains hotel descrtiption, image and price 
 
 Enjoy!
 
